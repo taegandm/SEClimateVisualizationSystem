@@ -1,5 +1,3 @@
-// js/map.js
-
 // Initialize the map
 const map = L.map('map', {
     zoom: 4,               // Initial zoom level
