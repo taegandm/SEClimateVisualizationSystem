@@ -3,69 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaflet Map with Toggle Button</title>
+    <title>Leaflet Map</title>
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <style>
-        #map {
-            width: 100%;
-            height: 100vh; /* Fullscreen map */
-        }
-        .toggle-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 1000; /* Ensure the button appears above the map */
-            background-color: white;
-            border: 2px solid #4CAF50;
-            border-radius: 5px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .toggle-button.active {
-            background-color: #4CAF50;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/map.js"></script>
 </head>
+<header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../map/mapTest.html">Interactive Map</a></li>
+            <li><a href="../infographic/infographicTest.html">Infographics</a></li>
+            <li><a href="../about.html">About</a></li>
+        </ul>
+    </nav>
+</header>
 <body>
     <div id="map"></div>
-    <button id="toggleButton" class="toggle-button">Add Marker</button>
+    <button id="toggleMarkerButton" class="toggle-marker-button">Add Marker</button>
+    <button id="toggleShapeButton" class="toggle-shape-button">Add Shape</button>
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script>
-        // Initialize the map
-        const map = L.map('map').setView([37.8, -96.9], 4); // Centered on US
-
-        // Add OpenStreetMap tiles
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
-
-        // Add Marker Functionality
-        let addMarkerEnabled = false; // Toggle state
-
-        function onMapClick(e) {
-            if (!addMarkerEnabled) return; // Do nothing if not enabled
-            const { lat, lng } = e.latlng; // Extract latitude and longitude
-            L.marker([lat, lng]).addTo(map)
-                .bindPopup(`Latitude: ${lat.toFixed(4)}, Longitude: ${lng.toFixed(4)}`)
-                .openPopup();
-        }
-
-        // Add click event listener to the map
-        map.on('click', onMapClick);
-
-        // Toggle button functionality
-        const toggleButton = document.getElementById('toggleButton');
-        toggleButton.addEventListener('click', () => {
-            addMarkerEnabled = !addMarkerEnabled; // Toggle state
-            toggleButton.classList.toggle('active', addMarkerEnabled); // Toggle button style
-            toggleButton.textContent = addMarkerEnabled ? 'Stop Adding Markers' : 'Add Marker'; // Update button text
-        });
-    </script>
 </body>
 </html>

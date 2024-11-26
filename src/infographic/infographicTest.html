@@ -5,26 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chart.js Infographics</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
-        .chart-container {
-            width: 45%;
-            max-width: 500px;
-        }
-        canvas {
-            background: #f4f4f4;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
+<header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../map/mapTest.html">Interactive Map</a></li>
+            <li><a href="../infographic/infographicTest.html">Infographics</a></li>
+            <li><a href="../about.html">About</a></li>
+        </ul>
+    </nav>
+</header>
 <body>
     <!-- Containers for charts -->
     <div class="chart-container">
@@ -107,5 +99,8 @@
         createChart('chart3', 'pie', 'Pie Chart Example', dummyLabels, dummyValues3);
         createChart('chart4', 'radar', 'Radar Chart Example', dummyLabels, dummyValues4);
     </script>
+    <footer>
+        <p>&copy; 2024 Climate Data Visualization Project</p>
+    </footer>
 </body>
 </html>
