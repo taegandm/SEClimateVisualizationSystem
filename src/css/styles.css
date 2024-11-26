@@ -102,3 +102,22 @@ canvas {
     line-height: normal; /* Ensure proper text alignment */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Optional: Shadow for extra contrast */
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+        
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.pagination {
+    margin: 10px 0;
+}
