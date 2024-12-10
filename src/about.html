@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postgres Data Viewer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="map/map.html">Interactive Map</a></li>
+            <li><a href="infographic/infographicTest.html">Infographics</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <h1>Entries</h1>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Tribe</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be injected here -->
+        </tbody>
+    </table>
+    <div class="pagination">
+        <button id="prevPage" disabled>Previous</button>
+        <button id="nextPage">Next</button>
+    </div>
+
+    <script>
+        let currentPage = 1;
+
+        async function fetchEntries(page) {
+            try {
+                const response = await fetch(`http://127.0.0.1:3000/entries?page=${page}&limit=10`);
+                const data = await response.json();
+
+                // Update table rows
+                const tbody = document.getElementById('data-table').querySelector('tbody');
+                tbody.innerHTML = ''; // Clear existing rows
+
+                data.forEach(entry => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${entry.title}</td>
+                        <td>${entry.tribe}</td>
+                        <td>${entry.year}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+
+                // Update pagination buttons
+                document.getElementById('prevPage').disabled = page === 1;
+                document.getElementById('nextPage').disabled = data.length < 10;
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        // Event listeners for pagination buttons
+        document.getElementById('prevPage').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                fetchEntries(currentPage);
+            }
+        });
+
+        document.getElementById('nextPage').addEventListener('click', () => {
+            currentPage++;
+            fetchEntries(currentPage);
+        });
+
+        // Initial fetch
+        fetchEntries(currentPage);
+    </script>
+</body>
+</html>

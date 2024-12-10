@@ -1,8 +1,33 @@
-<!-- map.html -->
-<main>
-    <h1>Interactive Climate Change Map</h1>
-    <div id="map" style="height: 500px;"></div>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <link ref="stylesheet" href="../css/styles.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../map/map.html">Interactive Map</a></li>
+            <li><a href="../infographic/infographicTest.html">Infographics</a></li>
+            <li><a href="../about.html">About</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div id="map"></div>
+    <button id="toggleMarkerButton" class="toggle-marker-button">Add Marker</button>
+    <button id="toggleShapeButton" class="toggle-shape-button">Add Shape</button>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Custom JS -->
     <script src="../js/map.js"></script>
-</main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</body>
+</html>
