@@ -1,5 +1,5 @@
-const fs = require('fs');
-const csv = require('csv-parser');
+import fs from 'fs';
+import csv from 'csv-parser';
 
 export function extractCSVData(filePath) {
     return new Promise((resolve, reject) => {
@@ -46,3 +46,21 @@ export function extractGeoJsonData(filePath) {
         return null;
     }
 }
+
+
+// Example usage:
+const csvFilePath = 'data/annual-co2-emissions-per-country.csv'; // Path to your CSV file
+const JSONFilePath = 'data/countries.geojson'; // Path to your GeoJSON file
+
+const features = extractGeoJsonData(JSONFilePath);
+if (features) {
+    console.log('Extracted Features:', features);
+}
+
+extractCSVData(csvFilePath)
+    .then((data) => {
+        console.log('Extracted Data:', data);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });

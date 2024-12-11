@@ -20,14 +20,17 @@
 </header>
 <body>
     <div id="map"></div>
-    <button id="toggleMarkerButton" class="toggle-marker-button">Add Marker</button>
-    <button id="toggleShapeButton" class="toggle-shape-button">Add Shape</button>
+    <div class="controls">
+        <label for="yearSelect">Select Year:</label>
+        <select id="yearSelect"></select>
+    </div>
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <!-- Custom JS -->
     <script src="../js/map.js"></script>
+    <script src="../js/processFile.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </body>
 </html>
