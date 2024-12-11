@@ -19,18 +19,19 @@
     </nav>
 </header>
 <body>
-    <div id="map"></div>
-    <div class="controls">
+    <div id="dropdown-container">
+        <div id="world-emissions">Total World Emissions: Loading...</div>
         <label for="yearSelect">Select Year:</label>
         <select id="yearSelect"></select>
     </div>
+    <div id="map"></div>
+    
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <!-- Custom JS -->
-    <script src="../js/map.js"></script>
-    <script src="../js/processFile.js"></script>
+    <script type="module" src="../js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </body>
 </html>
