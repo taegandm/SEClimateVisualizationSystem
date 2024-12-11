@@ -1,0 +1,20 @@
+{
+  "name": "seclimatevisualizationsystem",
+  "version": "1.0.0",
+  "description": "CSIT 515 Project",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "react-scripts start"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  }
+}
