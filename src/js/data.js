@@ -1,7 +1,5 @@
 import { map, addBaseLayer, clearMapLayers } from './map.js';
 import { updateWorldEmissionsDisplay } from './ui.js';
-import { addWeatherToMap } from './weather.js';
-
 
 export async function loadGeoJsonDataWithEmissions(currentYear) {
     try {
@@ -25,7 +23,6 @@ export async function loadGeoJsonDataWithEmissions(currentYear) {
 
         clearMapLayers();
         addBaseLayer();
-        //addWeatherToMap(geoJsonResponse, emissionsMap);
 
         
         L.geoJSON(geoJsonResponse, {

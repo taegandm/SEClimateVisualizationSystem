@@ -141,8 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
         setupEventListeners(data);
 
         // Default chart (first location)
-        locationSelect.value = locationSelect.options[0]?.value;
-        const defaultData = filterDataByEntity(data, locationSelect.value);
+        locationSelect.value = "World";
+        const defaultData = filterDataByEntity(data, "World");
         if (defaultData.length > 0) createOrUpdateChart(defaultData);
     }
 
