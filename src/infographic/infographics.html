@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatted Infographics</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/emissions_infographic.js" defer></script>
+    <script src="../js/energy_infographic.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../map/map.html">Interactive Map</a></li>
+                <li><a href="../infographic/infographics.html">Infographics</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dropdown-container-left">
+        <label class="label" for="emissionsLocationSelect">Select Location:</label>
+        <select id="emissionsLocationSelect">
+            <option value="World">World</option>
+            <!-- Dynamically populated options -->
+        </select>
+
+        <label for="yearSelect">Select Year:</label>
+        <select class="label" id="emissionsYearSelect">
+            <!-- Dynamically populated options -->
+        </select>
+    </div>
+    <!-- Section 1 -->
+    <div class="section">
+        <div class="chart-container">
+            <canvas id="chart1"></canvas>
+        </div>
+        <div class="text-container">
+            <p>The chart displays carbon emissions by sector for various countries and geographical regions from 1990 to 2021, highlighting contributions to global greenhouse gas emissions by activities such as agriculture, land use changes, waste management, buildings, industry, transportation, electricity and heat generation, and other fuel combustion.<br><br>This data provides critical insights into the distribution of emissions across different economic activities and regions, helping to identify the primary drivers of climate change. Understanding these patterns is essential for developing targeted policies and strategies to mitigate emissions, transition to sustainable practices, and address global warming.<br><br>With climate change posing significant risks to ecosystems, economies, and human health, this data underscores the urgency of coordinated global efforts to reduce carbon emissions and limit temperature rise to internationally agreed targets.<br><br><a href="https://ourworldindata.org/grapher/ghg-emissions-by-sector">Data Source</a></p>
+        </div>
+    </div>
+    <div class="page-break"></div>
+
+    <!-- Section 2 -->
+    <div class="dropdown-container-right">
+        <label class="label" for="energyLocationSelect">Select Location:</label>
+        <select id="energyLocationSelect"></select>
+    </div>
+    <div class="section">
+        <div class="chart-container">
+            <canvas id="chart2"></canvas>
+        </div>
+        <div class="text-container">
+            <p>Renewable energies, such as solar, wind, hydro, and geothermal power, are essential in combating climate change as they produce minimal greenhouse gas emissions compared to fossil fuels. By transitioning to these sustainable energy sources, we can significantly reduce carbon dioxide and other harmful emissions that contribute to global warming and extreme weather patterns.<br><br>The benefits of renewable energy include its infinite availability, reduction in air pollution, and creation of new jobs in green industries, leading to a cleaner environment and healthier economies.<br><br>However, there are some challenges, such as the intermittent nature of solar and wind power, high initial installation costs, and the land or resource requirements for certain technologies. Despite these limitations, the long-term environmental and economic benefits of renewables make them a critical solution for a sustainable future.<br><br><a href="https://ourworldindata.org/grapher/modern-renewable-prod">Data Source</a></p>
+        </div>
+    </div>
+    <div class="page-break"></div>
+
+
+    <footer>
+        <p>&copy; 2024 Climate Data Visualization Project</p>
+    </footer>
+</body>
+</html>

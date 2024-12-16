@@ -11,75 +11,55 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="map/map.html">Interactive Map</a></li>
-            <li><a href="infographic/infographicTest.html">Infographics</a></li>
+            <li><a href="infographic/infographics.html">Infographics</a></li>
             <li><a href="about.html">About</a></li>
         </ul>
     </nav>
 </header>
 <body>
-    <h1>Entries</h1>
-    <table id="data-table">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Tribe</th>
-                <th>Year</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Data will be injected here -->
-        </tbody>
-    </table>
-    <div class="pagination">
-        <button id="prevPage" disabled>Previous</button>
-        <button id="nextPage">Next</button>
+  <main>
+    <!-- About Section -->
+<section class="about-section">
+    <!-- Project Description -->
+    <div class="project-description">
+      <h2>About the Project</h2>
+      <p>
+        This project was developed by a student team over the course of a semester and is designed to educate users about climate change in a fun and engaging way. Climate change is a serious issue that affects us all, and it is crucial for everyone to learn about its causes, impacts, and solutions. We hope this website provides valuable insights while keeping the learning experience enjoyable. If you have any suggestions, problems, or comments, please feel free to email us at igniteteam@gmail.com.<br><br><u>Thank you for visiting our website!</u></p>
     </div>
-
-    <script>
-        let currentPage = 1;
-
-        async function fetchEntries(page) {
-            try {
-                const response = await fetch(`http://127.0.0.1:3000/entries?page=${page}&limit=10`);
-                const data = await response.json();
-
-                // Update table rows
-                const tbody = document.getElementById('data-table').querySelector('tbody');
-                tbody.innerHTML = ''; // Clear existing rows
-
-                data.forEach(entry => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td>${entry.title}</td>
-                        <td>${entry.tribe}</td>
-                        <td>${entry.year}</td>
-                    `;
-                    tbody.appendChild(row);
-                });
-
-                // Update pagination buttons
-                document.getElementById('prevPage').disabled = page === 1;
-                document.getElementById('nextPage').disabled = data.length < 10;
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        }
-
-        // Event listeners for pagination buttons
-        document.getElementById('prevPage').addEventListener('click', () => {
-            if (currentPage > 1) {
-                currentPage--;
-                fetchEntries(currentPage);
-            }
-        });
-
-        document.getElementById('nextPage').addEventListener('click', () => {
-            currentPage++;
-            fetchEntries(currentPage);
-        });
-
-        // Initial fetch
-        fetchEntries(currentPage);
-    </script>
+    <div class="page-break"></div>
+  
+    <!-- Links to Other Sites -->
+    <div class="links-section">
+      <h2>Related Links</h2>
+      <p>Explore various websites to learn about the project and climate change! Listed below are the project repository (Project Repository), the website where we found the relevant datasets (Our World in Data), as well as websites discussing climate change by NASA, NOAA, the EPA, and MIT.</p>
+      <ul>
+        <li><a href="https://github.com/taegandm/SEClimateVisualizationSystem" target="Github">Project Repository</a></li>
+        <li><a href="https://ourworldindata.org/" target="Dataset Reference">Our World in Data</a></li>
+        <li><a href="https://science.nasa.gov/climate-change/" target="NASA">NASA: Climate Change</a></li>
+      </ul>
+      <ul>        
+        <li><a href="https://www.noaa.gov/education/resource-collections/climate/climate-change-impacts" target="NOAA">NOAA: Climate Change Impacts</a></li>
+        <li><a href="https://climate.mit.edu/what-we-know-about-climate-change" target="MIT"><b>MIT</b>: What We Know About Climate Change</a></li>
+        <li><a href="https://www.epa.gov/climatechange-science/basics-climate-change" target="EPA">EPA: Basics of Climate Change</a></li>
+      </ul>
+    </div>
+    <div class="page-break"></div>
+  
+    <!-- People Involved -->
+    <div class="team-section">
+      <h2>Meet the Team</h2>
+      <p>The team listed below created the project and all relevant documentation:</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/taegan-maishman-760299222/">Taegan Maishman</a></li>
+        <li>Alekhya Kummitha</li>
+        <li>Krishna Teja Bandla</li>
+        <li>Ashwini Dasanakoppa</li>
+        <li>Drashya Nileshbhai Babariya</li>
+      </ul>
+    </div>
+  </main>
+    <footer>
+      <p>&copy; 2024 Climate Data Visualization Project</p>
+    </footer>
 </body>
 </html>

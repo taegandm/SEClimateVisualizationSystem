@@ -24,6 +24,7 @@ export async function loadGeoJsonDataWithEmissions(currentYear) {
         clearMapLayers();
         addBaseLayer();
 
+        
         L.geoJSON(geoJsonResponse, {
             style: function (feature) {
                 const countryName = feature.properties.ADMIN;
@@ -50,6 +51,7 @@ export async function loadGeoJsonDataWithEmissions(currentYear) {
                 }
             }
         }).addTo(map);
+        
     } catch (error) {
         console.error('Error loading data:', error);
     }
