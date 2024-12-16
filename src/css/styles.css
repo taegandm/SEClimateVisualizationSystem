@@ -24,6 +24,7 @@ nav a {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 main {
@@ -81,16 +82,31 @@ footer {
     outline: none; /* Remove default outline */
 }
 
+/* Styling for the dropdown select element */
+#locationSelect {
+    width: 150px; /* Width of the dropdown */
+    padding: 5px; /* Padding for the dropdown */
+    font-size: 14px; /* Font size for readability */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light gray background */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Hover and focus styles for the dropdown */
+#locationSelect:hover, #yearSelect:focus {
+    border-color: #007BFF; /* Blue border on hover or focus */
+    outline: none; /* Remove default outline */
+}
+
 /* Optional styling for dropdown text alignment */
 #yearSelect option {
     text-align: center; /* Center align the dropdown text */
 }
 
-
-
 .chart-container {
-    width: 45%;
-    max-width: 500px;
+    width: 65%;
+    max-width: 700px;
 }
 canvas {
     background: #f4f4f4;
@@ -113,6 +129,10 @@ canvas {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Optional: Shadow for extra contrast */
 }
 
+.text-container {
+    width: 35%;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -130,4 +150,159 @@ th {
 
 .pagination {
     margin: 10px 0;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem;
+}
+
+.chart-container {
+    width: 65%;
+    flex: 1 1 65%;
+}
+
+.text-container {
+    width: 35%;
+    flex: 1 1 35%;
+    padding: 1rem;
+}
+
+.section:nth-child(odd) {
+    flex-direction: row;
+}
+
+.section:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.text-container p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #2a9d8f;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.hero {
+    background-image: url('../assets/hero.webp'); /* Replace with your hero image path */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    display: inline-block;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0 0 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+main {
+    padding: 2rem;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.intro h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.feature {
+    text-align: center;
+    width: 300px;
+}
+
+.feature img {
+    width: 100%;
+    border-radius: 8px;
+    height: 140px;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem;
+}
+
+.feature p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #264653;
+    color: white;
+}
+
+.dropdown-container-left {
+    padding: 20px 60px 0px 80px;
+}
+
+.dropdown-container-right {
+    padding: 20px 60px 0px 55%;
+}
+
+.page-break {
+    width: 80%;               /* Line covers 80% of the screen width */
+    margin: 40px auto;        /* Centers the line horizontally with vertical spacing */
+    border-top: 2px solid #ccc; /* Creates the line with a light gray color */
+    opacity: 0.7;             /* Slight transparency for a subtle effect */
 }

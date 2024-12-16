@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatted Infographics</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/emissions_infographic.js" defer></script>
+    <script src="../js/energy_infographic.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../map/map.html">Interactive Map</a></li>
+                <li><a href="../infographic/infographics.html">Infographics</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dropdown-container-left">
+            <label for="emissionsLocationSelect">Select Location:</label>
+            <select id="emissionsLocationSelect">
+            <option value="World">World</option>
+            <!-- Dynamically populated options -->
+        </select>
+
+        <label for="yearSelect">Select Year:</label>
+        <select id="emissionsYearSelect">
+            <!-- Dynamically populated options -->
+        </select>
+    </div>
+    <!-- Section 1 -->
+    <div class="section">
+        <div class="chart-container">
+            <canvas id="chart1"></canvas>
+        </div>
+        <div class="text-container">
+            <p>The chart displays carbon emissions by sector for various countries and geographical regions from 1990 to 2021, highlighting contributions to global greenhouse gas emissions by activities such as agriculture, land use changes, waste management, buildings, industry, transportation, electricity and heat generation, and other fuel combustion.<br><br>This data provides critical insights into the distribution of emissions across different economic activities and regions, helping to identify the primary drivers of climate change. Understanding these patterns is essential for developing targeted policies and strategies to mitigate emissions, transition to sustainable practices, and address global warming.With climate change posing significant risks to ecosystems, economies, and human health, this data underscores the urgency of coordinated global efforts to reduce carbon emissions and limit temperature rise to internationally agreed targets.</p>
+        </div>
+    </div>
+    <div class="page-break"></div>
+
+    <!-- Section 2 -->
+    <div class="dropdown-container-right">
+        <label for="energyLocationSelect">Select Location:</label>
+        <select id="energyLocationSelect"></select>
+    </div>
+    <div class="section">
+        <div class="chart-container">
+            <canvas id="chart2"></canvas>
+        </div>
+        <div class="text-container">
+            <p>The line chart provides a visual representation of trends over time. It highlights significant changes and patterns in the data series.</p>
+        </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section">
+        <div class="chart-container">
+            <canvas id="chart3"></canvas>
+        </div>
+        <div class="text-container">
+            <p>The pie chart is used to depict proportions and percentages, offering a clear view of the relative size of each category in the dataset.</p>
+        </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section">
+        <div class="chart-container">
+            <canvas id="chart4"></canvas>
+        </div>
+        <div class="text-container">
+            <p>The radar chart compares multiple variables on a two-dimensional plane, emphasizing the differences and similarities between data points.</p>
+        </div>
+    </div>
+
+    <script>
+        function createChart(canvasId, chartType, chartTitle, labels, values) {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            new Chart(ctx, {
+                type: chartType,
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: chartTitle,
+                        data: values,
+                        backgroundColor: [
+                            'rgba(75, 192, 192, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(153, 102, 255, 0.6)',
+                            'rgba(201, 203, 207, 0.6)'
+                        ],
+                        borderColor: [
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(201, 203, 207, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        },
+                        title: {
+                            display: true,
+                            text: chartTitle,
+                            font: {
+                                size: 18
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        const labels = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
+        const values1 = [12, 19, 3, 5, 2, 3];
+        const values2 = [10, 15, 7, 3, 6, 8];
+        const values3 = [8, 14, 6, 9, 5, 4];
+        const values4 = [5, 10, 8, 15, 7, 6];
+
+        createChart('chart3', 'pie', 'Pie Chart Example', labels, values3);
+        createChart('chart4', 'radar', 'Radar Chart Example', labels, values4);
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Climate Data Visualization Project</p>
+    </footer>
+</body>
+</html>

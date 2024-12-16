@@ -15,6 +15,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@turf/turf": "^7.1.0",
     "leaflet": "^1.9.4"
   }
 }
